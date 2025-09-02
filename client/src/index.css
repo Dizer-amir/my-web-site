@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(220, 20%, 97%);
+  --foreground: hsl(220, 10%, 15%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(220, 10%, 15%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(220, 10%, 15%);
+  --primary: hsl(243, 75%, 66%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(244, 48%, 58%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(220, 14%, 96%);
+  --muted-foreground: hsl(220, 10%, 45%);
+  --accent: hsl(267, 57%, 78%);
+  --accent-foreground: hsl(220, 10%, 15%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(220, 13%, 91%);
+  --input: hsl(220, 13%, 91%);
+  --ring: hsl(243, 75%, 66%);
+  --chart-1: hsl(243, 75%, 66%);
+  --chart-2: hsl(267, 57%, 78%);
+  --chart-3: hsl(197, 92%, 61%);
+  --chart-4: hsl(43, 74%, 66%);
+  --chart-5: hsl(120, 60%, 70%);
+  --sidebar: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(220, 10%, 15%);
+  --sidebar-primary: hsl(243, 75%, 66%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(267, 57%, 78%);
+  --sidebar-accent-foreground: hsl(220, 10%, 15%);
+  --sidebar-border: hsl(220, 13%, 91%);
+  --sidebar-ring: hsl(243, 75%, 66%);
+  --font-sans: 'Cairo', 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 1rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(243, 75%, 66%);
+  --shadow-xs: 0px 2px 0px 0px hsl(243, 75%, 66%);
+  --shadow-sm: 0px 2px 0px 0px hsl(243, 75%, 66%), 0px 1px 2px -1px hsl(243, 75%, 66%);
+  --shadow: 0px 2px 0px 0px hsl(243, 75%, 66%), 0px 1px 2px -1px hsl(243, 75%, 66%);
+  --shadow-md: 0px 2px 0px 0px hsl(243, 75%, 66%), 0px 2px 4px -1px hsl(243, 75%, 66%);
+  --shadow-lg: 0px 2px 0px 0px hsl(243, 75%, 66%), 0px 4px 6px -1px hsl(243, 75%, 66%);
+  --shadow-xl: 0px 2px 0px 0px hsl(243, 75%, 66%), 0px 8px 10px -1px hsl(243, 75%, 66%);
+  --shadow-2xl: 0px 2px 0px 0px hsl(243, 75%, 66%);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: hsl(220, 20%, 3%);
+  --foreground: hsl(220, 6%, 91%);
+  --card: hsl(220, 15%, 8%);
+  --card-foreground: hsl(220, 6%, 91%);
+  --popover: hsl(220, 15%, 8%);
+  --popover-foreground: hsl(220, 6%, 91%);
+  --primary: hsl(243, 75%, 66%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(244, 48%, 58%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(220, 15%, 12%);
+  --muted-foreground: hsl(220, 10%, 60%);
+  --accent: hsl(267, 57%, 78%);
+  --accent-foreground: hsl(220, 10%, 15%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(220, 13%, 20%);
+  --input: hsl(220, 13%, 20%);
+  --ring: hsl(243, 75%, 66%);
+  --sidebar: hsl(220, 15%, 8%);
+  --sidebar-foreground: hsl(220, 6%, 91%);
+  --sidebar-primary: hsl(243, 75%, 66%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(267, 57%, 78%);
+  --sidebar-accent-foreground: hsl(220, 10%, 15%);
+  --sidebar-border: hsl(220, 13%, 20%);
+  --sidebar-ring: hsl(243, 75%, 66%);
+  --font-sans: 'Cairo', 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 1rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    direction: rtl;
+  }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.medical-gradient {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+.severity-mild {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+  border-left: 4px solid #4caf50;
+}
+
+.severity-moderate {
+  background: linear-gradient(135deg, #fff3e0 0%, #fef7ed 100%);
+  border-left: 4px solid #ff9800;
+}
+
+.severity-severe {
+  background: linear-gradient(135deg, #ffebee 0%, #fef2f2 100%);
+  border-left: 4px solid #f44336;
+}
+
+.doctor-advice-bg {
+  background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* RTL specific styles */
+.rtl {
+  direction: rtl;
+}
+
+/* Ensure proper RTL text alignment */
+.text-right-rtl {
+  text-align: right;
+}
+
+.text-left-rtl {
+  text-align: left;
+}
